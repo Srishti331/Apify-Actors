@@ -1,0 +1,5 @@
+venv/
+tests/
+directives/
+.DS_Store
+__pycache__/

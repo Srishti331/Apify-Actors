@@ -1,0 +1,19 @@
+{
+  "title": "Resume Anonymizer",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "urls": {
+      "title": "Resume URLs",
+      "description": "Direct download URLs to PDF or DOCX resume files.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^https?://.+"
+      },
+      "minItems": 1,
+      "editor": "stringList"
+    }
+  },
+  "required": ["urls"]
+}

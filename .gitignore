@@ -1,0 +1,42 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+build/
+*.egg
+
+# --- Virtual environment ---
+venv/
+.venv/
+env/
+
+# --- Environment / secrets ---
+.env
+.env.*
+credentials.json
+token.json
+
+# --- Apify local storage ---
+storage/
+apify_storage/
+
+# --- Temporary / intermediate files ---
+.tmp/
+*.tmp
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+
+# --- IDE ---
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# --- Test / coverage ---
+.pytest_cache/
+.coverage
+htmlcov/

@@ -1,0 +1,56 @@
+{
+  "title": "JD ↔ Resume Match Scorer",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "job_description": {
+      "title": "Job description",
+      "description": "Paste the full job description text.",
+      "type": "string",
+      "editor": "textarea"
+    },
+    "resume_urls": {
+      "title": "Resume URLs",
+      "description": "Direct download URLs to PDF or DOCX resume files.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^https?://.+"
+      },
+      "minItems": 1,
+      "editor": "stringList"
+    },
+    "llm_model": {
+      "title": "LLM Model",
+      "description": "Model for JD and resume section extraction. With OPENROUTER_API_KEY, bare names get an \"openai/\" prefix.",
+      "type": "string",
+      "default": "gpt-4o-mini",
+      "enum": [
+        "gpt-4o-mini",
+        "gpt-4o",
+        "gpt-4-turbo"
+      ],
+      "editor": "select"
+    },
+    "max_concurrency": {
+      "title": "Max Concurrent Requests",
+      "description": "Maximum number of resumes to process in parallel.",
+      "type": "integer",
+      "default": 5,
+      "minimum": 1,
+      "maximum": 20,
+      "editor": "number"
+    },
+    "llm_api_key": {
+      "title": "Your LLM API key (optional)",
+      "description": "Use your own OpenRouter (sk-or-...) or OpenAI key. Leave empty to use the actor's built-in key, if the owner has set one.",
+      "type": "string",
+      "editor": "textfield",
+      "isSecret": true
+    }
+  },
+  "required": [
+    "job_description",
+    "resume_urls"
+  ]
+}
